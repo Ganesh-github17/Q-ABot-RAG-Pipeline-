@@ -1,0 +1,20 @@
+# Secrets
+.env
+
+# Vector database (regeneratable via `python index.py`)
+chroma_db/
+storage/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

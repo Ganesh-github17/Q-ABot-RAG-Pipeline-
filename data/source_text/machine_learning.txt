@@ -1,0 +1,39 @@
+TITLE: Machine Learning Fundamentals
+
+SECTION: What Is Machine Learning?
+
+Machine learning is a subfield of artificial intelligence in which computer systems learn to perform a task by finding patterns in data, rather than by following a fixed set of rules written explicitly by a programmer. Instead of telling the computer exactly how to solve a problem step by step, a machine learning practitioner provides examples of the problem being solved correctly, and an algorithm searches for a mathematical function, called a model, that captures the relationship between the inputs and the desired outputs.
+
+A commonly cited definition, attributed to computer scientist Tom Mitchell, states that a computer program is said to learn from experience with respect to some class of tasks and performance measure if its performance at those tasks, as measured by the performance measure, improves with experience. In practice, this experience usually takes the form of a dataset, and the improvement is measured using a numerical metric such as accuracy or error rate.
+
+SECTION: Supervised Learning
+
+Supervised learning is the most widely used category of machine learning. In supervised learning, the training data consists of labeled examples, meaning that each input example is paired with the correct output, often called the label or target. The algorithm's job is to learn a general mapping from inputs to outputs that will also work correctly on new, unseen examples.
+
+Supervised learning problems are typically divided into two types. Classification problems involve predicting a discrete category, such as determining whether an email is spam or not spam, or whether a tumor in a medical image is benign or malignant. Regression problems involve predicting a continuous numerical value, such as forecasting the price of a house given its size, location, and age, or predicting the temperature tomorrow given today's weather conditions.
+
+Common supervised learning algorithms include linear regression and logistic regression, decision trees and random forests, support vector machines, and neural networks. Each algorithm makes different assumptions about the data and has different strengths; for example, decision trees are easy to interpret, while neural networks can capture very complex nonlinear relationships but require more data and computation.
+
+SECTION: Unsupervised Learning
+
+Unsupervised learning deals with data that has no labels at all. Instead of learning a mapping from inputs to known outputs, an unsupervised algorithm tries to discover hidden structure in the data on its own. The most common unsupervised learning task is clustering, in which the algorithm groups similar data points together, such as segmenting customers into groups with similar purchasing behavior for a marketing campaign. Another common unsupervised task is dimensionality reduction, in which a high-dimensional dataset is compressed into a lower-dimensional representation while preserving as much important information as possible, which is useful for visualization and for speeding up other algorithms. Principal component analysis and k-means clustering are two of the most widely taught unsupervised learning algorithms.
+
+SECTION: Reinforcement Learning
+
+Reinforcement learning is a third major paradigm, distinct from supervised and unsupervised learning. In reinforcement learning, an agent interacts with an environment over a sequence of time steps, taking actions and receiving feedback in the form of rewards or penalties. The agent's goal is to learn a strategy, called a policy, that maximizes the total reward it accumulates over time. Reinforcement learning is well suited to problems that involve sequential decision-making, such as game playing, robotic control, and resource allocation. Notable achievements in reinforcement learning include systems that learned to play the board game Go at a superhuman level and systems that learned to control robotic arms through trial and error.
+
+SECTION: The Standard Machine Learning Workflow
+
+Building a machine learning system typically follows a repeatable workflow. First, data must be collected and cleaned, since real-world data often contains missing values, duplicate records, or inconsistent formatting. Second, features must be selected or engineered, meaning that the raw data is transformed into a set of numerical inputs that the algorithm can use effectively. Third, the dataset is usually split into a training set, used to fit the model, and a separate test set, used to evaluate how well the model generalizes to data it has not seen before; a validation set is often held out as well to tune the model's configuration settings, called hyperparameters. Fourth, a model is trained by adjusting its internal parameters to minimize a loss function, which quantifies how far the model's predictions are from the correct answers. Finally, the trained model is evaluated using metrics appropriate to the task, such as accuracy, precision, and recall for classification, or mean squared error for regression, before being deployed into a real application.
+
+SECTION: Overfitting and Underfitting
+
+Two of the most important concepts in machine learning are overfitting and underfitting. Overfitting occurs when a model learns the training data too closely, including its noise and random fluctuations, so that it performs very well on the training set but poorly on new, unseen data. Underfitting occurs when a model is too simple to capture the underlying pattern in the data, so it performs poorly on both the training set and new data. Practitioners manage this tradeoff, often called the bias-variance tradeoff, using techniques such as regularization, cross-validation, gathering more training data, and choosing an appropriately sized model for the amount of available data.
+
+SECTION: Evaluation Metrics
+
+Choosing the right evaluation metric matters a great deal. For classification tasks, accuracy measures the fraction of predictions that are correct, but it can be misleading on imbalanced datasets, where one class is much more common than another. In such cases, precision, which measures how many of the items predicted as positive are actually positive, and recall, which measures how many of the actual positive items were correctly identified, give a more complete picture, and are often combined into a single F1 score. For regression tasks, common metrics include mean absolute error and mean squared error, which measure the average size of the difference between predicted and actual values.
+
+SECTION: How Machine Learning Relates to Deep Learning and Natural Language Processing
+
+Machine learning provides the theoretical and mathematical foundation for both deep learning and modern natural language processing. Deep learning is best understood as a specialized subfield of machine learning that uses artificial neural networks with many layers, allowing the model to automatically learn increasingly abstract features directly from raw data such as pixels or text, rather than relying on manually engineered features. Modern natural language processing systems, including machine translation systems and conversational assistants, are built almost entirely on machine learning techniques, and in particular on the deep learning architectures described in the deep learning material referenced elsewhere in this document collection.

@@ -1,0 +1,37 @@
+TITLE: Introduction to Artificial Intelligence
+
+SECTION: What Is Artificial Intelligence?
+
+Artificial intelligence, commonly abbreviated as AI, is the branch of computer science concerned with building systems that can perform tasks which normally require human intelligence. These tasks include understanding language, recognizing images, making decisions under uncertainty, planning a sequence of actions, and learning from experience. Unlike a traditional computer program, which follows a fixed set of instructions written by a programmer, an AI system is often designed to improve its behavior based on data or feedback, or to reason about a problem in ways that were not explicitly hard coded.
+
+The field of artificial intelligence was formally founded in 1956 at a workshop held at Dartmouth College, where researchers including John McCarthy, Marvin Minsky, and Claude Shannon proposed that every aspect of learning or intelligence could in principle be described precisely enough that a machine could simulate it. Since then, the field has gone through several waves of optimism and disappointment, often referred to as "AI summers" and "AI winters," driven by changes in available computing power, data, and algorithmic breakthroughs.
+
+SECTION: Narrow AI Versus General AI
+
+It is useful to distinguish between narrow AI and general AI. Narrow AI, also called weak AI, refers to systems that are designed to perform a single task or a limited family of tasks extremely well. Examples include a spam filter that classifies email, a recommendation engine that suggests movies, or a voice assistant that converts speech to text. Almost every AI system in commercial use today is narrow AI. It can vastly outperform humans at its specific task but has no capability outside that task.
+
+General AI, sometimes called artificial general intelligence or AGI, refers to a hypothetical system that could perform any intellectual task a human can perform, and could transfer knowledge and skill from one domain to another the way a person does. As of today, AGI does not exist, and there is ongoing debate among researchers about how far away it might be, or whether current approaches such as large language models are a meaningful step toward it.
+
+SECTION: The Main Approaches to Building AI Systems
+
+Historically, AI research has been organized into a few major approaches. The first is symbolic AI, sometimes called "good old-fashioned AI," which represents knowledge using explicit rules, logic, and symbols. Expert systems built in the 1970s and 1980s, which encoded the knowledge of human specialists as if-then rules, are a classic example. Symbolic systems are easy to interpret because their reasoning can be traced step by step, but they struggle with ambiguity, noisy data, and tasks that are hard to describe with explicit rules, such as recognizing a face in a photograph.
+
+The second major approach is machine learning, in which a system learns patterns directly from data rather than being explicitly programmed with rules. Machine learning has become the dominant approach in modern AI because it scales well with the increasing availability of data and computing power. Machine learning itself contains many subfields, including supervised learning, unsupervised learning, and reinforcement learning, as well as deep learning, which uses artificial neural networks with many layers.
+
+A third approach, evolutionary computation, draws inspiration from biological evolution, using mechanisms such as mutation, crossover, and selection to search for good solutions to a problem. While less dominant today, evolutionary methods are still used for optimization problems where the search space is large and difficult to describe with a gradient.
+
+SECTION: Core Subfields of Artificial Intelligence
+
+Several subfields make up the broader discipline of artificial intelligence. Natural language processing focuses on enabling computers to understand, interpret, and generate human language, and underlies applications such as machine translation, chatbots, and text summarization. Computer vision focuses on enabling computers to interpret and understand visual information from the world, such as images and video, and underlies applications such as facial recognition, medical image analysis, and self-driving car perception systems. Robotics combines AI with mechanical engineering to build machines that can sense and act in the physical world. Planning and search, one of the oldest subfields, is concerned with finding a sequence of actions that achieves a goal, and is used in applications ranging from logistics to game-playing programs such as those that play chess or Go.
+
+SECTION: Why Artificial Intelligence Matters Today
+
+Interest in artificial intelligence has accelerated dramatically over the past decade for three interconnected reasons. First, the amount of digital data available for training AI systems has grown enormously, driven by the internet, mobile devices, and sensors. Second, computing hardware, particularly graphics processing units originally designed for video games, turned out to be extremely well suited to the kind of parallel numerical computation that modern machine learning requires, making it feasible to train much larger models than before. Third, algorithmic advances, especially in deep learning, made it possible to take advantage of this larger scale of data and compute far more effectively than earlier techniques could.
+
+As a result, AI systems are now embedded in many everyday products and services, from search engines and recommendation systems to virtual assistants, fraud detection systems, and medical diagnostic tools. At the same time, the growing capability of AI systems has raised important questions about fairness, transparency, safety, employment, and the appropriate limits of automated decision-making, which are now active areas of research and public policy debate.
+
+SECTION: Key Terms to Remember
+
+An agent, in AI terminology, is any entity that perceives its environment through sensors and acts upon that environment through actuators, whether that entity is a physical robot or a piece of software. A model, in machine learning terminology, refers to the mathematical structure, often with millions or billions of adjustable parameters, that has been fit to data in order to make predictions or decisions. Training refers to the process of adjusting a model's parameters using data so that it performs a task well. Inference refers to using an already-trained model to make a prediction on new, previously unseen input.
+
+Understanding these foundational ideas is essential before moving on to more specialized topics such as machine learning, deep learning, natural language processing, and computer vision, each of which builds directly on the concepts introduced here.
