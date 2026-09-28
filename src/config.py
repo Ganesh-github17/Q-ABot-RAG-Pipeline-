@@ -1,9 +1,9 @@
 """
 Centralized configuration for the Document Q&A Bot.
 
-All tunable parameters are read from environment variables (via a .env file
-loaded with python-dotenv) so that nothing important is hard-coded across the
-codebase. Sensible defaults are provided for local, no-billing operation.
+All tunable parameters are read directly from environment variables so that
+nothing important is hard-coded across the codebase. Sensible defaults are
+provided for local, no-billing operation.
 OpenAI-backed behavior remains opt-in via environment variables.
 """
 
@@ -12,11 +12,6 @@ from __future__ import annotations
 import os
 from dataclasses import dataclass
 from pathlib import Path
-
-from dotenv import load_dotenv
-
-# Load variables from a .env file in the project root, if present.
-load_dotenv()
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -98,10 +93,8 @@ class Settings:
         """Return the OpenAI API key or raise a clear, actionable error."""
         if not self.openai_api_key:
             raise RuntimeError(
-                "OPENAI_API_KEY is not set. Create a .env file (copy "
-                ".env.example to .env) and set OPENAI_API_KEY=<your key>, or "
-                "export it as an environment variable before running this "
-                "application."
+                "OPENAI_API_KEY is not set. Set it as an environment "
+                "variable in your shell before running this application."
             )
         return self.openai_api_key
 

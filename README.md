@@ -88,7 +88,6 @@ Installed and used by this project (see `requirements.txt` for exact pins):
 | `chromadb` | Persistent vector database |
 | `pymupdf` (fitz) | Primary PDF text extraction |
 | `pypdf` | Fallback PDF text extraction, and used to build the sample PDFs' companion tooling |
-| `python-dotenv` | Loads `.env` configuration |
 | `streamlit` | Optional web UI |
 | `pytest` | Test framework |
 | `reportlab` | One-time script (`data/build_pdfs.py`) that renders the sample documents to PDF — not used at runtime by the app |
@@ -132,7 +131,6 @@ document-qa-bot/
 ├── streamlit_app.py         # optional web UI on top of the same pipeline
 │
 ├── requirements.txt
-├── .env.example
 ├── .gitignore
 ├── README.md
 └── LICENSE
@@ -217,19 +215,15 @@ source .venv/bin/activate        # macOS/Linux
 # .venv\Scripts\Activate.ps1     # Windows (PowerShell)
 
 pip install -r requirements.txt
-
-cp .env.example .env             # macOS/Linux
-# copy .env.example .env         # Windows
-
-# then edit .env and set OPENAI_API_KEY
 ```
 
 ## Environment Variables
 
-Copy `.env.example` to `.env` if you want to override defaults. The project
-works out of the box without `OPENAI_API_KEY`. If you want to opt into the
-OpenAI-backed path later, set `EMBEDDING_BACKEND=openai` and/or
-`GENERATION_BACKEND=openai`, then provide `OPENAI_API_KEY`.
+The project uses local backends by default and needs no API key. Settings can
+be overridden with shell environment variables. The optional OpenAI backend
+requires `OPENAI_API_KEY`; set it directly in your shell environment rather
+than storing it in a file. In PowerShell, set `$env:OPENAI_API_KEY` for the
+current terminal session.
 
 ## Indexing
 
@@ -346,7 +340,7 @@ outside knowledge.
 | Optional Streamlit UI | `streamlit_app.py` | ✓ |
 | README | `README.md` | ✓ |
 | Tests | `tests/` (chunking, ingestion, retrieval) | ✓ (run manually here; see Testing Results) |
-| `.env.example` / no committed secrets | `.env.example`, `.gitignore` | ✓ |
+| No committed secrets | `.gitignore`; credentials are supplied through the shell environment when needed | ✓ |
 
 ## Testing Results (what was actually run, and where)
 
@@ -384,12 +378,12 @@ the documented current OpenAI Python SDK (`OpenAI().embeddings.create`,
 exercised through mocks in the test suite, but you should run the checks
 below yourself once you have an API key.
 
-### Checks to run yourself after adding an API key
+### Checks to run after installation
 
 ```bash
 python --version                 # confirm 3.11+
 pip install -r requirements.txt
-pytest                           # 19 tests should pass
+pytest                           # run the test suite
 python index.py                  # should report 5 docs, ~78 chunks, and store them
 python app.py                    # ask the 5+ example questions above
 # ask the "population of Japan" question -> should refuse
@@ -398,7 +392,7 @@ python app.py                    # ask the 5+ example questions above
 
 ## Demo Instructions (3–8 minutes)
 
-1. `pip install -r requirements.txt`, set `OPENAI_API_KEY` in `.env`. (30s)
+1. `pip install -r requirements.txt`; the default local backends need no API key. (30s)
 2. Run `python index.py` — narrate the printed progress: documents found,
    pages extracted, chunks created, embedding batches, chunks stored. (1 min)
 3. Run `python app.py` and ask 2–3 of the example questions above, pointing
@@ -434,5 +428,6 @@ I'd highlight if pushed further: chunking strategy affects both retrieval
 quality and cost, the embedding model bounds retrieval quality, and there's
 no re-ranking or hybrid search layer yet — those are the most natural next
 improvements.
-#   Q - A B o t - R A G - P i p e l i n e -  
+#   Q - A B o t - R A G - P i p e l i n e - 
+ 
  
